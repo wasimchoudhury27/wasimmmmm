@@ -1,0 +1,6 @@
+{
+  "name": "SCAMSHIELD",
+  "description": "Real-time AI-assisted scam-risk scanner and threat intelligence platform for suspicious job offers, payment demands, rental deposits, appointment letters, and URLs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
