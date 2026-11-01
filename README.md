@@ -1,107 +1,140 @@
-🛡️ Fake Offer Letter & Phishing Inspector
+# SCAMSHIELD AI
 
-AI-Powered Scam & Phishing Detection Web Application
+> **Pause. Verify. Protect.**  
+> An AI-assisted security workspace for investigating suspicious messages, emails, images, job offers and URLs.
 
-Job seekers, students, renters, and everyday internet users are increasingly targeted by fake offer letters, phishing links, payment demands, and deposit scams.
+[![React](https://img.shields.io/badge/React-19-149eca?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-7-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-8-646cff?logo=vite&logoColor=white)](https://vite.dev/)
+[![Google Gemini](https://img.shields.io/badge/AI-Google%20Gemini-4285F4?logo=googlegemini&logoColor=white)](https://ai.google.dev/)
 
-Fake Offer Letter & Phishing Inspector is a security-focused web application designed to help users identify suspicious patterns in job offers, appointment letters, messages, and URLs before they take risky actions.
+## Overview
 
-🚨 The Problem
+SCAMSHIELD AI helps people examine potentially fraudulent digital content before they click a link, share information or send money. It combines a React-based investigation interface with server-side Gemini-powered analysis.
 
-Scammers often use convincing job offers, fake company names, urgent payment requests, suspicious links, and unrealistic promises to trick users.
+The project focuses on understandable risk signals rather than presenting an AI result as a definitive verdict.
 
-Many people may not recognize these warning signs until it is too late.
+## What it can analyse
 
-💡 The Solution
+- **Messages and emails** — inspect text for suspicious language, pressure tactics and requests for money or sensitive information.
+- **Images and screenshots** — submit image evidence for multimodal analysis.
+- **URLs** — request an AI-assisted review of a potentially suspicious web address.
+- **Risk explanations** — view detected warning signs and an investigation result.
+- **Demo evidence** — explore curated sample scenarios through the Evidence Library.
 
-This application uses AI-powered analysis to examine user-provided offer-letter text and URLs and highlight potential scam indicators in a simple, understandable way.
+## How it works
 
-It helps users answer:
+```text
+Message / Email / Image / URL
+            |
+            v
+     Investigation UI
+            |
+            v
+       Express API
+            |
+            v
+    Gemini AI analysis
+            |
+            v
+ Risk signals + explanation
+            |
+            v
+     Investigation view
+```
 
-«“Does this look suspicious, and what warning signs should I check?”»
+## Technology
 
-✨ Key Features
+| Area | Tools |
+|---|---|
+| Frontend | React 19, TypeScript |
+| Build tooling | Vite, esbuild |
+| Styling | Tailwind CSS 4 |
+| Backend | Node.js, Express |
+| AI integration | Google GenAI SDK (Gemini) |
+| UI & motion | Lucide React, Motion |
+| Supporting libraries | D3, TopoJSON |
 
-- 📄 Offer Letter Analysis
-  Analyze suspicious job-offer or appointment-letter text for potential red flags.
+## Project structure
 
-- 🔗 URL Analysis
-  Inspect suspicious URLs for phishing-related warning signs.
+```text
+.
+├── server.ts              # Express server and API entry point
+├── server/
+│   ├── analyzers/         # Analysis logic
+│   └── services/          # Server-side services
+├── src/
+│   ├── components/        # Interface components
+│   ├── data/              # Supporting/demo data
+│   ├── utils/             # Shared utilities
+│   ├── App.tsx            # Main application
+│   ├── main.tsx           # Frontend entry point
+│   └── types.ts           # TypeScript types
+├── index.html
+├── package.json
+└── vite.config.ts
+```
 
-- 🚩 Scam Indicator Detection
-  Identify common patterns associated with fraudulent offers and phishing attempts.
+## Run locally
 
-- 💳 Payment-Demand Detection
-  Highlight requests for registration fees, security deposits, processing charges, training fees, or other suspicious payments.
+### Prerequisites
 
-- 📊 Scam Threat Index
-  Generate an easy-to-understand threat indication based on detected warning signs.
+- Node.js
+- Bun package manager
+- A Google Gemini API key
 
-- 🧠 AI-Powered Security Insights
-  Provide understandable explanations of why specific content may be suspicious.
+### 1. Clone the repository
 
-- 👤 User-Friendly Interface
-  Designed to make basic scam awareness accessible even to users without cybersecurity knowledge.
+```bash
+git clone https://github.com/wasimchoudhury27/wasimmmmm.git
+cd wasimmmmm
+```
 
-⚙️ How It Works
+### 2. Install dependencies
 
-User Input
-    ↓
-Offer Letter / Message / URL
-    ↓
-AI-Powered Analysis
-    ↓
-Scam & Phishing Red-Flag Detection
-    ↓
-Threat Index
-    ↓
-Security Insights & Warnings
+```bash
+bun install
+```
 
-🧠 Technology Stack
+### 3. Configure environment variables
 
-- Google AI Studio
-- Google Gemini
-- HTML5
-- CSS3
-- JavaScript
-- Google Services
+Create a `.env` file in the project root:
 
-🔐 Security Focus
+```env
+GEMINI_API_KEY=your_gemini_api_key
+APP_URL=http://localhost:3000
+```
 
-The application focuses on detecting indicators such as:
+Keep your API key private. Never commit your real `.env` file or expose the key in frontend code. The repository includes `.env.example` as a reference.
 
-- Unexpected payment requests
-- Fake recruitment patterns
-- Urgency or pressure tactics
-- Suspicious links
-- Unusual requests for personal information
-- Unrealistic job promises
-- Security/deposit demands
-- Potential phishing language
+### 4. Start the development server
 
-«⚠️ Important: The Scam Threat Index is an AI-assisted indicator, not a guarantee that an offer or URL is legitimate or fraudulent. Users should independently verify companies, recruiters, websites, and payment requests before taking action.»
+```bash
+bun run dev
+```
 
-🎯 Target Users
+### 5. Build for production
 
-- 👨‍🎓 Students
-- 💼 Job Seekers
-- 🏠 Renters & PG Seekers
-- 👨‍💻 Internet Users
-- 🏢 Employees
-- 👨‍👩‍👧 General Public
+```bash
+bun run build
+```
 
-🌍 Why This Project Matters
+## Responsible use & limitations
 
-Online scams are becoming increasingly convincing and difficult to recognize.
+- AI-generated risk assessments can be wrong. A low-risk result does **not** prove that a message, website or offer is safe.
+- Independently verify recruiters, employers, payment requests and website domains through trusted official channels.
+- Do not use this project as a substitute for professional cybersecurity investigation.
+- Never submit passwords, OTPs, payment-card details or other highly sensitive information for testing.
 
-This project aims to make basic scam awareness and phishing detection simpler, faster, and more accessible by combining generative AI with a user-friendly web interface.
+## Project context
 
-🏆 Project
+Developed as a generative-AI and cybersecurity project for **PromptWars × Gen AI Club**.
 
-Built for: PromptWars × Gen AI Club
+## Maintainer
 
-Project Category: Generative AI • Cybersecurity • Scam Detection • Web Application
+**Wasim Choudhury**  
+GitHub: [@wasimchoudhury27](https://github.com/wasimchoudhury27)
 
-🚀 Vision
+---
 
-«Think before you click. Verify before you pay. Stay safe online.»
+If you find the project useful, consider giving the repository a ⭐.
